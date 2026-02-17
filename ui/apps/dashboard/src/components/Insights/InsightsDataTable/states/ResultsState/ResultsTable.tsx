@@ -2,10 +2,14 @@ import { memo, useCallback } from 'react';
 import { Table } from '@inngest/components/Table';
 import type { ColumnDef } from '@tanstack/react-table';
 
+<<<<<<< HEAD
 import {
   useCellDetailContext,
   type SelectedCellCoords,
 } from '@/components/Insights/CellDetailContext';
+=======
+import { useCellDetailContext } from '@/components/Insights/CellDetailContext';
+>>>>>>> 18e872648 (updated data tabel to fix the table column issue, added cell detail sidebar, removed query history from the sidebar)
 import { useInsightsStateMachineContext } from '@/components/Insights/InsightsStateMachineContext/InsightsStateMachineContext';
 import type { InsightsFetchResult } from '@/components/Insights/InsightsStateMachineContext/types';
 import { ResultsTableFooter, assertData } from './ResultsTableFooter';
@@ -18,7 +22,10 @@ type InsightsTableProps = {
   columns: ColumnDef<InsightsEntry, InsightsColumnValue>[];
   data: InsightsEntry[];
   onCellClick?: (rowIndex: number, columnId: string, value: unknown) => void;
+<<<<<<< HEAD
   selectedCell?: SelectedCellCoords | null;
+=======
+>>>>>>> 18e872648 (updated data tabel to fix the table column issue, added cell detail sidebar, removed query history from the sidebar)
 };
 
 function InsightsTable({
@@ -26,7 +33,10 @@ function InsightsTable({
   columns,
   data,
   onCellClick,
+<<<<<<< HEAD
   selectedCell,
+=======
+>>>>>>> 18e872648 (updated data tabel to fix the table column issue, added cell detail sidebar, removed query history from the sidebar)
 }: InsightsTableProps) {
   return (
     <Table<InsightsEntry>
@@ -34,7 +44,10 @@ function InsightsTable({
       columns={columns}
       data={data}
       enableColumnSizing
+<<<<<<< HEAD
       selectedCell={selectedCell}
+=======
+>>>>>>> 18e872648 (updated data tabel to fix the table column issue, added cell detail sidebar, removed query history from the sidebar)
       onCellClick={onCellClick}
     />
   );
@@ -45,7 +58,11 @@ const MemoizedInsightsTable = memo(InsightsTable);
 export function ResultsTable() {
   const { data } = useInsightsStateMachineContext();
   const { columns } = useColumns(data);
+<<<<<<< HEAD
   const { openCellDetail, selectedCellCoords } = useCellDetailContext();
+=======
+  const { openCellDetail } = useCellDetailContext();
+>>>>>>> 18e872648 (updated data tabel to fix the table column issue, added cell detail sidebar, removed query history from the sidebar)
 
   const handleCellClick = useCallback(
     (rowIndex: number, columnId: string, value: unknown) => {
@@ -75,7 +92,10 @@ export function ResultsTable() {
           columns={columns}
           data={data.rows}
           onCellClick={handleCellClick}
+<<<<<<< HEAD
           selectedCell={selectedCellCoords}
+=======
+>>>>>>> 18e872648 (updated data tabel to fix the table column issue, added cell detail sidebar, removed query history from the sidebar)
         />
       </div>
       <ResultsTableFooter />
